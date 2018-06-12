@@ -45,7 +45,7 @@ app.prepare()
 const PDF_PATH = __dirname + '/pdf/test.pdf';
 
 const getPdf = async () => {
-  const browser = await puppeteer.launch();
+  const browser = await puppeteer.launch({args: ['--no-sandbox', '--disable-setuid-sandbox']});
   const page = await browser.newPage();
   await page.setExtraHTTPHeaders({'Content-Type': 'application/json'});
   await page.setRequestInterception(true);
