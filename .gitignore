@@ -1,5 +1,5 @@
 .idea
 .next
 node_modules
-pdf
+pdf/*pdf
 package-lock.json
