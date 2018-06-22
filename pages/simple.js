@@ -1,4 +1,8 @@
 import React from 'react';
+import NoticeTable from '../components/NoticeTable';
+import PageDivider from '../components/PageDivider';
+import CheckPointsTable from '../components/CheckPointsTable';
+
 
 export default class extends React.Component {
 
@@ -9,30 +13,15 @@ export default class extends React.Component {
 
   render() {
     return <div>
-      <p>
-        Hello，Mini Force!
-      </p>
 
-      <table border="1">
-        <thead>
-        <tr>
-          <th width="100">No.</th>
-          <th width="200">Name</th>
-        </tr>
-        </thead>
-        <tbody>
-        {
-          ['福特', '露西', '麦克斯', '赛米']
-            //.concat(this.props.data)
-            .map((name, index) => (
-            <tr key={String(index)}>
-              <td>{index + 1}</td>
-              <td>{name}</td>
-            </tr>
-          ))
-        }
-        </tbody>
-      </table>
+      <NoticeTable />
+
+      <PageDivider />
+
+      <CheckPointsTable />
+
+
+
     </div>
   }
 }
