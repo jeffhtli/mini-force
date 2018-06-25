@@ -2,12 +2,20 @@ import React from 'react';
 import SignDate from './SignDate';
 
 const ITEMS = [
-  '被检查单位', '地址', '联系人', '联系电话', '许可证号', '检察人员及执法证件名称、编号', '检查时间', '检查地点'
+  {key: 'unit', label: '被检查单位'},
+  {key: 'address', label: '地址'},
+  {key: 'contact', label: '联系人'},
+  {key: 'phone', label: '联系电话'},
+  {key: 'license', label: '许可证号'},
+  {key: 'officer', label: '检察人员及执法证件名称、编号'},
+  {key: 'checkTime', label: '检查时间'},
+  {key: 'checkAddress', label: '检查地点'},
 ];
 
-export default () => (
 
-  <div className="container">
+
+export default ({data}) => {
+  return <div className="container">
     <p className="title">
       食品生产经营日常监督检查要点表
     </p>
@@ -18,12 +26,12 @@ export default () => (
 
     <div className="box">
       {
-        ITEMS.map((item, index)=> (
+        ITEMS.map(({key, label}, index)=> (
           <div className="item" key={String(index)}>
             <div className="item-label">
-              {item}：
+              {label}：
             </div>
-            <div className="item-value">{''}</div>
+            <div className="item-value">{data[key]}</div>
           </div>
         ))
       }
@@ -94,6 +102,7 @@ export default () => (
         display: inline-block;
         border-bottom: 1px solid black;
         width: 300px;
+        padding-left: 10px;
       }
 
       .sign {
@@ -114,5 +123,4 @@ export default () => (
 
 
   </div>
-
-);
+}

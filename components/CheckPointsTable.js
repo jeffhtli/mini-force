@@ -378,7 +378,7 @@ export default () => (
 
     <p className="title">监督要点检查表</p>
 
-    <table style={{width: '100%'}} border="1" cellspacing="0" cellpadding="0">
+    <table style={{width: '100%'}} border="1" cellSpacing="0" cellPadding="0">
       <thead>
         <tr>
           <th className="th1">检查项目</th>
@@ -397,8 +397,8 @@ export default () => (
       {
         data.map(item => (
           item.subdata.map((subitem, index) => (
-            <tr>
-              { index === 0 && <td rowspan={item.subcnt}>{item.name}</td> }
+            <tr key={String(index)}>
+              { index === 0 && <td rowSpan={item.subcnt}>{item.name}</td> }
               <td align="center">{`${subitem.isKey ? '*' : ''}${subitem.subid}`}</td>
               <td style={{padding: 10}}>{subitem.subname}</td>
               <td align="center"><input type="checkbox"/></td>
